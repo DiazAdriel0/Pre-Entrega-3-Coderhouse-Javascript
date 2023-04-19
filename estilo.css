@@ -60,11 +60,17 @@ body {
 	.carousel-img {
 		height: 100px;
 	}
+	.img-altura {
+		height: 140px;
+	}
 }
 
 @media screen and (min-width: 250px) and (max-width: 500px) {
 	.carousel-img {
 		height: 200px;
+	}
+	.img-altura {
+		height: 150px;
 	}
 }
 
@@ -72,11 +78,17 @@ body {
 	.carousel-img {
 		height: 300px;
 	}
+	.img-altura {
+		height: 250px;
+	}
 }
 
 @media screen and (min-width: 900px) and (max-width: 5000px) {
 	.carousel-img {
 		height: 400px;
+	}
+	.img-altura {
+		height: 300px;
 	}
 }
 
@@ -107,10 +119,6 @@ body {
 .productos:hover{
 	filter: drop-shadow(1px 1px 5px #fff);
 	transition: ease-in-out .5s;
-}
-
-.img-altura {
-	height: 300px;
 }
 
 .select {
