@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tienda | Black Paradox</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+	<header class="navbar navbar-dark navbar-expand-lg header sticky-top" data-bs-theme="dark">
+		<div class="container text-center">
+			<a class="navbar-brand" href="index.html">
+				<img class="header__li__img-logo" src="Imagenes/Black Paradox logo.png">
+			</a>
+			<div class="">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		  	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">	
+					<li class="nav-item">
+						<a class="nav-link" href="nuestros-trabajos.html">NUESTROS TRABAJOS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="servicios.html">SERVICIOS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" href="tienda.html">TIENDA</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contacto.html">CONTACTO</a>
+					</li>
+					<button class="btn mx-3 bg-dark text-light bolsa-boton position-fixed end-0 nav-item" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample" id="bolsaBoton">
+						<i class="bi bi-handbag"></i><span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-pill bg-light p-2 text-dark" id="contadorProductos"><!-- <span></span> --></span>
+					</button>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<div>
+			<div class="collapse collapse-horizontal" id="collapseWidthExample">
+				<div class="bolsa bg-dark text-light" id="bolsa">
+					<!-- Cada producto va a tener la siguiente forma -->
+					<!-- <div class="container">
+						<div class="row row-cols-1 row-cols-lg-3 mt-3 justify-content-around">
+							<img src="Imagenes/tienda/set animal 2.jpeg" class="col-8 col-md-6 col-lg rounded-5 float-start">
+							<div class="col">
+								<p>Set Press On 'Animal'</p>
+								<hr>
+								<p>Medida: Triple Squared Qasdlaks; askdjalk</p>
+							</div>
+							<div class="col">
+								<p>Cantidad: 6</p>
+								<hr>
+								<p>Precio Unitario: $20000</p>
+								<hr>
+								<p>Subtotal: $145000</p>
+								<button type="button" class="btn btn-dark float-end" id="eliminarProducto">
+									<i class="bi bi-trash3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+										<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+									</svg></i>
+								</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<hr>
+							</div>
+						</div>
+					</div> -->
+					<!-- Hasta acá -->
+				</div>
+				<button type="button" class="btn btn-dark position-fixed bottom-0 end-0 boton-vaciar" id="vaciarBolsa">
+					<i class="bi bi-trash3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+						<path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+					</svg>Vaciar Bolsa De Compras</i>
+				</button>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 text-center justify-content-around my-3 g-3">
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set animal 2.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="animal" id="img0">
+						<p class="py-1" id="nombre0">Set Press On 'Animal'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida0">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio0"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad0">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa0">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set scary pink.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="scary pink" id="img1">
+						<p class="py-1" id="nombre1">Set Press On 'Scary Pink'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida1">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio1"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad1">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa1">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set fuxia fire.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="fuxia fire" id="img2">
+						<p class="py-1" id="nombre2">Set Press On 'Fuxia Fire'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida2">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio2"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad2">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa2">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set margaret.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="margaret" id="img3">
+						<p class="py-1" id="nombre3">Set Press On 'Margaret'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida3">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio3"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad3">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa3">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set x2 french black and white.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="x2 french black and white" id="img4">
+						<p class="py-1" id="nombre4">Set Press On 'X2 French B&W'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida4">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio4"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad4">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa4">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set x3 hearted.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="x3 hearted" id="img5">
+						<p class="py-1" id="nombre5">Set Press On 'X3 Hearted'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida5">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio5"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad5">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa5">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set x4 britney.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="x4 britney" id="img6">
+						<p class="py-1" id="nombre6">Set Press On 'X4 Britney'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida6">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio6"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad6">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa6">Agregar a mi bolsa</button>
+					</div>
+				</div>
+				<div class="col">
+					<div class="bg-dark text-light rounded productos">
+						<img src="Imagenes/tienda/set x4 fancy.jpeg" class="container-fluid pt-1 rounded-5 img-altura" alt="x4 fancy" id="img7">
+						<p class="py-1" id="nombre7">Set Press On 'X4 Fancy'</p>
+						<select class="form-select-sm my-1 bg-dark text-light select" name="medida" id="medida7">
+							<option value="" selected>Seleccione el tamaño</option>
+							<option value="Almond">Almond</option>
+							<option value="Medium Square">Medium Square</option>
+							<option value="Medium Coffin">Medium Coffin</option>
+							<option value="Long Stiletto">Long Stiletto</option>
+							<option value="Long Coffin">Long Coffin</option>
+							<option value="Long Tapered Square">Long Tapered Square</option>
+							<option value="Extra Long Stiletto">Extra Long Stiletto</option>
+							<option value="Extra Long Tapered Square">Extra Long Tapered Square</option>
+							<option value="Extra Long Coffin">Extra Long Coffin</option>
+							<option value="Triple Extra Long Tapered Square">Triple Extra Long Tapered Square</option>
+						</select>
+						<p class="text-start pt-3 mx-2">Precio: $<span id="precio7"></span></p>
+						<select class="form-select-sm mb-3 bg-dark text-light select" name="cantidad" id="cantidad7">
+							<option value="" selected>Cantidad</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+						<button type="submit" class="btn btn-outline-light mb-3" id="agregarALaBolsa7">Agregar a mi bolsa</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<nav>
+			<ul class="footer__ul d-flex justify-content-between px-4">
+				<li class="footer__li">
+					<a href="https://instagram.com/blackparadoxnails?igshid=NmE0MzVhZDY=" target="_BLANK">
+						<img class="footer__img" src="Imagenes/Logo Instagram.png">
+					</a>
+				</li>
+				<li class="footer__li">
+					<a href="https://www.facebook.com/juliettt.ayala?mibextid=ZbWKwL" target="_BLANK">
+						<img class="footer__img" src="Imagenes/Logo Facebook.png">
+					</a>
+				</li>
+				<li class="footer__li">
+					<a href="https://www.tiktok.com/@ablackteaplease" target="_BLANK">
+						<img class="footer__img" src="Imagenes/Logo Tik Tok.png">
+					</a>
+				</li>
+				<li class="footer__li">
+					<a href="https://wa.me/5493412584051?text=Hola%2c+quisiera+un+turno.+%c2%bfQue+d%c3%adas+y+horarios+tienen+disponibles%3f" target="_BLANK">
+						<img class="footer__img" src="Imagenes/Logo Whatsapp.png">
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</footer>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script src="./script.js"></script>
+</body>
+</html>
