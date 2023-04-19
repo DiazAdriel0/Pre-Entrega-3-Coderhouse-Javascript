@@ -136,6 +136,7 @@ function mostrarBolsaDeCompras() {
     let productosEnLocalStorage = [];
     const bolsa = document.getElementById("bolsa");
     bolsa.innerHTML = ""
+    let subTotales = [];
     if(localStorage.length == 0){
         alert("Aún no agregó productos a la bolsa");//Reemplazar con Toastify
     }else{
@@ -143,8 +144,8 @@ function mostrarBolsaDeCompras() {
         for (let i = 0; i < productosEnLocalStorage.length; i++) {
             const element = productosEnLocalStorage[i];
             const subTotal = element.precio * element.cantidad;
+            subTotales.push(subTotal)
             let div = document.createElement('div');
-
             div.innerHTML = `<div class="container">
             <div class="row row-cols-1 row-cols-lg-3 mt-3 justify-content-around">
                 <img src="${element.ruta}" class="col-8 col-md-6 col-lg rounded-5 float-start">
@@ -168,14 +169,28 @@ function mostrarBolsaDeCompras() {
             </div>
         </div>`;
             bolsa.appendChild(div);
-        } 
+        }
+        let div2 = document.createElement('div');
+        let total = subTotales.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        div2.innerHTML = `<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 align-self-center text-center">
+                <p class="text-light mx-5">Total: $${total}</p>
+            </div>
+            <div class="col-12 align-self-center text-center">
+                <button type="submit" class="btn btn-outline-light mx-5 mb-2" id="comprar">Comprar</button>
+            </div>
+        </div>
+        </div>`
+        bolsa.appendChild(div2)
     }
 }
 
 //Esto es para que cuando se haga click por fuera del div de la bolsa de compras el contenido se deje de mostrar
 document.addEventListener('click', function(event) {
     let div = document.getElementById('collapseWidthExample');
-    if (!div.contains(event.target)) {
+    let bolsa = document.getElementById('bolsa')
+    if (!bolsa.contains(event.target)) {
       div.classList.remove('show');
     }
 });
@@ -184,45 +199,10 @@ let vaciarBolsa = document.getElementById("vaciarBolsa");
 vaciarBolsa.addEventListener("click", vaciarBolsaDeCompras);
 
 function vaciarBolsaDeCompras() {
-    let productosEnBolsa = [];
-    localStorage.setItem('productosBolsa', JSON.stringify(productosEnBolsa));
-    mostrarBolsaDeCompras();
+    localStorage.removeItem('productosBolsa')
+    //Este es el array de la funcion agregarProducto que estaba lleno de los productos del Storage entonces lo vacío
+    productosBolsa = []
+    let div = document.getElementById('collapseWidthExample');
+    div.classList.remove('show');
+    alert("Bolsa de compras vacía")//Reemplazar con Toastify
 }
-/* let botonesEliminar = [];
-for (let i = 0; ; i++) {
-    const boton = document.getElementById(`eliminarProducto${i}`)
-    if (boton){
-    botonesEliminar.push(boton)
-    }else{
-        break;
-    }
-}*/
-
-/* for (let i = 0; i < botonesEliminar.length; i++) {
-    const element = botonesEliminar[i];
-    element.addEventListener("click", function() {
-        eliminarDeLaBolsa(i);
-    }); 
-} */
-
-/* const eliminarBotones = document.querySelectorAll("[data-indice]"); */
-/* const eliminarBotones = document.querySelectorAll('.botones-eliminar');
-eliminarBotones.forEach((boton) => {
-    boton.addEventListener('click', function() {
-        const indice = parseInt(this.getAttribute('data-indice'));
-        eliminarProducto(indice);
-    });
-}); */
-
-
-
-/* function eliminarDeLaBolsa(id){
-   let productosEnBolsa = JSON.parse(localStorage.getItem('productosBolsa'));
-   productosEnBolsa.splice(id,1);
-   localStorage.setItem("productosBolsa", JSON.stringify(productosEnBolsa));
-} */
-/* alert("Producto eliminado de la bolsa")
-div.classList.remove('show') */
-
-/* let productosEnLocalStorage = [];
-productosEnLocalStorage.push(...JSON.parse(localStorage.getItem(productosBolsa))) */
