@@ -185,3 +185,8 @@ body {
 .boton-agregar {
 	margin: 0 1rem;
 }
+
+#map {
+	height: 400px;
+	width: 80%; 
+  }

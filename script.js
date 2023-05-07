@@ -249,3 +249,58 @@ if(localStorage.getItem('productosBolsa')){
     span.innerHTML = `<span>${contador}</span>`;
     contadorProductos.appendChild(span);
 }
+
+function initMap() {
+    const blackParadoxCoord = { lat: -33.001175, lng: -60.675524 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        center: blackParadoxCoord,
+        zoom: 16,
+    });
+    const marker = new google.maps.Marker({
+      position: blackParadoxCoord,
+      map: map,
+    });
+  }
+  
+window.initMap = initMap;
+
+/* function initMap() {
+    const coord = { lat: -33.001175, lng: -60.675524 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 4,
+        center: coord,
+      });
+} */
+/* let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -33.001175, lng: -60.675524 },
+    zoom: 8,
+  });
+}
+
+window.initMap = initMap;
+
+fetch("https://www.google.com/maps/embed/v1/place?key=AIzaSyDwjQn_3CPc6iRaL9XYqCbT59sSKgcNgrk&q=EkRBdmVuaWRhIE92aWRpbyBMYWdvcyA1NDMxLCBSb3NhcmlvLCBQcm92aW5jaWEgZGUgU2FudGEgRmUsIEFyZ2VudGluYSIxEi8KFAoSCYO27dEJrLeVEekHoPsdMeluELcqKhQKEgnNbSAwiqu3lRGYnpkjXhefSg")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    }) */
+
+
+/* function initMap() {
+    const myLatLng = { lat: -33.001175, lng: -60.675524 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 4,
+      center: myLatLng,
+    });
+  
+    new google.maps.Marker({
+      position: myLatLng,
+      map,
+      title: "Hello World!",
+    });
+  }
+  
+  window.initMap = initMap; */
